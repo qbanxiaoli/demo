@@ -1,10 +1,10 @@
 version: '3'
 services:
-  quantization:
-    image: quantization
+  demo:
+    image: demo
     restart: always
     tty: true
-    container_name: quantization
+    container_name: demo
     environment:
       TZ: Asia/Shanghai
       FDFS_TRACKER: 192.168.0.108
@@ -14,7 +14,7 @@ services:
       FDFS_PORT: 22122
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
-      MYSQL_DATABASE: quantization
+      MYSQL_DATABASE: demo
       MYSQL_USERNAME: root
       MYSQL_PASSWORD: 123456
       PROXY_HOST: host.docker.internal
@@ -22,7 +22,7 @@ services:
     ports:
       - 8888:80
     volumes:
-      - ~/quantization/logs:/logs
+      - ~/demo/logs:/logs
     depends_on:
       - mysql
       - fastdfs

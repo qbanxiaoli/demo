@@ -1,11 +1,11 @@
 server:
   port: 80
   servlet:
-    context-path: /quantization
+    context-path: /demo
 
 spring:
   application:
-    name: quantization
+    name: demo
   # 默认使用dev环境
   profiles:
     active: @spring.profiles.active@
