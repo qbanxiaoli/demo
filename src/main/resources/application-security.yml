@@ -1,0 +1,17 @@
+security:
+  oauth2:
+    authorization:
+      token-key-access: http://127.0.0.1/quantization/oauth/token
+      jwt:
+        key-alias: quantization
+        key-password: quantization_password
+        key-store: /quantization.jks
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        opaquetoken:
+          client-id: quantization
+          client-secret: quantization_secret
+

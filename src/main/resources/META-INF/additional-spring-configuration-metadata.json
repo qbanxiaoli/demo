@@ -1,0 +1,99 @@
+{
+  "properties": [
+    {
+      "name": "swagger.show",
+      "type": "java.lang.Boolean",
+      "description": "是否启用swagger文档."
+    },
+    {
+      "name": "proxy.host",
+      "type": "java.lang.String",
+      "description": "代理地址."
+    },
+    {
+      "name": "proxy.port",
+      "type": "java.lang.Integer",
+      "description": "代理端口."
+    },
+    {
+      "name": "headers.user-agent",
+      "type": "java.lang.String",
+      "description": "请求头userAgent."
+    },
+    {
+      "name": "huobi.url",
+      "type": "java.lang.String",
+      "description": "火币请求地址."
+    },
+    {
+      "name": "huobi.contract-url",
+      "type": "java.lang.String",
+      "description": "火币合约请求地址."
+    },
+    {
+      "name": "marketing.kline",
+      "type": "java.lang.String",
+      "description": "K线查询地址."
+    },
+    {
+      "name": "market.merged",
+      "type": "java.lang.String",
+      "description": "滚动24小时交易和最优报价聚合行情(单个symbol)."
+    },
+    {
+      "name": "market.tickers",
+      "type": "java.lang.String",
+      "description": "全部symbol的交易行情."
+    },
+    {
+      "name": "market.depth",
+      "type": "java.lang.String",
+      "description": "市场深度行情（单个symbol）."
+    },
+    {
+      "name": "market.trade",
+      "type": "java.lang.String",
+      "description": "单个symbol最新成交记录."
+    },
+    {
+      "name": "market.trade-history",
+      "type": "java.lang.String",
+      "description": "单个symbol批量成交记录."
+    },
+    {
+      "name": "market.detail",
+      "type": "java.lang.String",
+      "description": "滚动24小时交易聚合行情(单个symbol)."
+    },
+    {
+      "name": "v1.symbols",
+      "type": "java.lang.String",
+      "description": "交易品种的计价货币和报价精度."
+    },
+    {
+      "name": "v1.currencys",
+      "type": "java.lang.String",
+      "description": "交易币种列表."
+    },
+    {
+      "name": "v1.timestamp",
+      "type": "java.lang.String",
+      "description": "查询当前系统时间."
+    },
+    {
+      "name": "v1.accounts",
+      "type": "java.lang.String",
+      "description": "用户资产查询地址."
+    },
+    {
+      "name": "contract.elite-account-ratio",
+      "type": "java.lang.String",
+      "description": "精英账户多空持仓数对比—账户数."
+    },
+    {
+      "name": "contract.elite-position-ratio",
+      "type": "java.lang.String",
+      "description": "精英账户多空持仓数对比—持仓量."
+    }
+  ]
+}

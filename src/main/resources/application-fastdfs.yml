@@ -1,0 +1,26 @@
+# 分布式文件系统fastdfs配置
+fdfs:
+  # socket连接超时时长
+  so-timeout: 1500
+  # 连接tracker服务器超时时长
+  connect-timeout: 600
+  pool:
+    #从池中借出的对象的最大数目（配置为-1表示不限制）
+    max-total: -1
+    #获取连接时的最大等待毫秒数(默认配置为5秒)
+    max-wait-millis: 5000
+    #每个key最大连接数
+    max-total-per-key: 50
+    #每个key对应的连接池最大空闲连接数
+    max-idle-per-key: 10
+    #每个key对应的连接池最小空闲连接数
+    min_idle_per_key: 5
+  # 缩略图生成参数，可选
+  thumb-image:
+    width: 150
+    height: 150
+  # 跟踪服务器tracker_server请求地址,支持多个，这里只有一个，如果有多个在下方加- x.x.x.x:port
+  tracker-list:
+    - ${FDFS_TRACKER:127.0.0.1}:${FDFS_PORT:22122}
+  # 存储服务器storage_server访问地址
+  web-server-url: ${PROTOCOL:http}://${WEB_SERVER:127.0.0.1}:${WEB_PORT:9999}/

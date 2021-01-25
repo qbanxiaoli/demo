@@ -1,0 +1,42 @@
+# 请求头
+headers:
+  user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36
+
+huobi:
+  # 火币请求地址，翻墙
+  #  url: https://api.huobi.pro
+  # 火币合约请求地址，翻墙
+  #  contract-url: https://api.hbdm.com
+  # 火币请求地址，不翻墙
+  url: https://api.huobi.de.com
+  # 火币合约请求地址，不翻墙
+  contract-url: https://api.btcgateway.pro
+
+# 市场行情
+market:
+  # K线查询地址
+  kline: /market/history/kline
+  # 滚动24小时交易和最优报价聚合行情(单个symbol)
+  merged: /market/detail/merged
+  # 全部symbol的交易行情
+  tickers: /market/tickers
+  # 市场深度行情（单个symbol）
+  depth: /market/depth
+  # 单个symbol最新成交记录
+  trade: /market/trade
+  # 单个symbol批量成交记录
+  trade-history: /market/history/trade
+  # 滚动24小时交易聚合行情(单个symbol)
+  detail: /market/detail
+
+# 市场交易
+v1:
+  # 用户资产查询地址
+  accounts: /v1/account/accounts
+
+# 合约交易
+contract:
+  # 精英账户多空持仓数对比—账户数
+  elite-account-ratio: /api/v1/contract_elite_account_ratio
+  # 精英账户多空持仓数对比—持仓量
+  elite-position-ratio: /api/v1/contract_elite_position_ratio

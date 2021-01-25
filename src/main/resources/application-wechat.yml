@@ -1,0 +1,14 @@
+# 微信公众号
+we-chat:
+  app-id: wx62cb138a095acada
+  app-secret: aa941a773e2019737b7d723458aece44
+  we-chat-url: https://api.weixin.qq.com
+
+# 微信公众号
+official-account:
+  # 获取access-token
+  access-token-url: /cgi-bin/token
+  # 获取关注者列表
+  user-list: /cgi-bin/user/get
+  # 获取用户基本信息
+  user-info: /cgi-bin/user/info
