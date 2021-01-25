@@ -20,13 +20,13 @@ import java.util.Map;
  */
 public class SmsUtil {
 
-    private static final String url = "dysmsapi.aliyuncs.quantization";
+    private static final String url = "dysmsapi.aliyuncs.com";
 
     private static final String signName = "掌淘科技";
 
-    private static final String accessKeyId = "180gidLp2JoiCt8E";
+    private static final String accessKeyId = "";
 
-    private static final String accessKeySecret = "KD0k8yEHdpUOnw3oUKms18vnYaXZbH";
+    private static final String accessKeySecret = "";
 
     public static SmsTemplateVO sendSms(String phoneNumbers, String templateCode, Map<String, String> map) {
         CommonRequest request = new CommonRequest();
