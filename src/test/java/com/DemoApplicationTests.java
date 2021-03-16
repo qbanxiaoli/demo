@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class QuantizationApplicationTests {
+public class DemoApplicationTests {
 
     @Autowired
     @Qualifier("sslRestTemplate")

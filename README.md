@@ -33,4 +33,3 @@
  keytool -list -rfc --keystore quantization.jks | openssl x509 -inform pem -pubkey
  ``` 
 
-"# demo" 

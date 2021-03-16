@@ -10,10 +10,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 // 自动插入和更新时间
 @EnableJpaAuditing
 @SpringBootApplication
-public class QuantizationApplication {
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(QuantizationApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 }

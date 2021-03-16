@@ -1,6 +1,5 @@
 package com.model.dto;
 
-import com.querydsl.core.types.Predicate;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;

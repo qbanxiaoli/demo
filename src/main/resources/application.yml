@@ -13,7 +13,7 @@ spring:
       - wechat
       - security
       - mybatis
-      - fastdfs
+      - os
       - huobi
   # i18n configuration(添加语言国际化支持)
   messages:

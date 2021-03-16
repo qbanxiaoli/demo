@@ -26,6 +26,7 @@
         <querydsl.version>4.2.1</querydsl.version>
         <fastjson.version>1.2.70</fastjson.version>
         <pagehelper.version>1.2.13</pagehelper.version>
+        <minio.version>8.1.0</minio.version>
         <fastdfs.version>1.26.7</fastdfs.version>
         <sms.version>4.4.9</sms.version>
         <poi.version>4.1.1</poi.version>
@@ -128,6 +129,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <!-- 使用minio -->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>${minio.version}</version>
         </dependency>
         <!-- 使用fastdfs -->
         <dependency>
