@@ -48,7 +48,7 @@ public class MinioUtil {
         // 新的文件名 = 存储桶文件名_时间戳.后缀名
         String fileName = minioProperties.getBucketName() + "_" +
                 System.currentTimeMillis() + "_" + dateFormat.format(new Date()) + "_" + new Random().nextInt(1000) +
-                FilenameUtils.getExtension(multipartFile.getOriginalFilename());
+                "." + FilenameUtils.getExtension(multipartFile.getOriginalFilename());
         //开始上传
         minioClient.putObject(
                 PutObjectArgs.builder().bucket(minioProperties.getBucketName()).object(fileName).stream(
@@ -73,7 +73,7 @@ public class MinioUtil {
         // 新的文件名 = 存储桶文件名_时间戳.后缀名
         String fileName = minioProperties.getBucketName() + "_" +
                 System.currentTimeMillis() + "_" + dateFormat.format(new Date()) + "_" + new Random().nextInt(1000) +
-                FilenameUtils.getExtension(FilenameUtils.getExtension(objectName));
+                "." + FilenameUtils.getExtension(objectName);
         //开始上传
         minioClient.putObject(PutObjectArgs.builder().bucket(minioProperties.getBucketName()).object(objectName).stream(stream, stream.available(), -1).contentType(FilenameUtils.getExtension(objectName)).build());
         return minioProperties.getBucketName() + "/" + fileName;
@@ -107,7 +107,7 @@ public class MinioUtil {
      * 获取⽂件外链
      *
      * @param storePath ⽂件路径
-     * @param expires    过期时间 <=7
+     * @param expires   过期时间 <=7
      * @return url
      */
     @SneakyThrows
