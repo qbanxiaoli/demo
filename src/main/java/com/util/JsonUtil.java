@@ -3,7 +3,6 @@ package com.util;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.model.vo.ResponseVO;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,7 +11,7 @@ import java.util.Map;
 
 /**
  * @author qbanxiaoli
- * @description Json字符串工具类
+ * @description Json转换工具类
  * @create 2018/7/3 13:31
  */
 @Slf4j

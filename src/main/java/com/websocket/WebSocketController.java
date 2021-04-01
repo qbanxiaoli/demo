@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Slf4j
 @Controller
 @AllArgsConstructor
-public class WebSocket {
+public class WebSocketController {
 
     private final SimpUserRegistry userRegistry;
 

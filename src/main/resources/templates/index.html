@@ -6,7 +6,7 @@
     <script src="http://cdn.bootcss.com/stomp.js/2.3.3/stomp.min.js"></script>
     <script src="https://cdn.bootcss.com/sockjs-client/1.1.4/sockjs.min.js"></script>
     <script>
-        var socket = new SockJS("http://localhost:8080/quantization/websocket");
+        var socket = new SockJS("http://132.129.1.137:8080/dev-api/websocket");
         var stompClient = Stomp.over(socket);
         window.onload = function () {
             connect();
@@ -15,7 +15,8 @@
         //订阅消息
         function subscribe() {
             stompClient.subscribe('/user/queue/message', function (response) {
-                console.log("/user/queue/message 你接收到的消息为:" + response);
+                console.log("/user/queue/message 你接收到的消息为:");
+                console.log(response.body);
             });
 
         }
@@ -60,29 +61,30 @@
                 {});
         }
 
-        // /**
-        //  * 发送URL中?&参数
-        //  * */
-        // function send5() {
-        //     stompClient.send("/app/param?name=张三", {},
-        //         {});
-        // }
+        /**
+         * 发送URL中?&参数
+         * */
+        function send5() {
+            stompClient.send("/app/message", {},
+                {});
+        }
 
         function connect() {
 
             stompClient.connect({
-                    Authorization: "bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiXSwiaWQiOjEsImV4cCI6MTU4NTc2NDU4OCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJqdGkiOiJiNmI4ODYxMi0zYTNjLTRjOWMtYWQ5Yi0xMzA3MWI1OWQ4OGMiLCJjbGllbnRfaWQiOiJxdWFudGl6YXRpb24ifQ.PfOmmw_vzNSct7mb-oT-V781z5GaCudFYvZHqwBBK4JzeJKNSdblb7znzvPKepN3SA3JcADKPvS0iDv50EiWI5lxrcX80AJq-eCS1djiqc1pErMMhhgcBaTwlHfJPVO3uUtMjIwebEVaZNTZOnN1KjOFa3YwNeI8qKbZqhW5vCXGDEMa6W3-VGryZ9qXDsIDkl2XRrwMPZIsfgS4oF1em8iYPRZDTfC7xCbkWh5D_rmpQ6dEnj4-lMzJfyId0mi0QGx393KqWk-7DD6DLD-2aZ8N5mnKW5hE44GAVxRDxtzWkjx-vlZ4-kcwZfFdRTpO40ZyhpHL5G0OnjsF5Bwb6g"
+                    Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjQ2MGQ5YzdhLWJjN2QtNDUyYy1hMDM2LTIzYTBmMzhjNDFjMSJ9.j2SThDCE21AXVaLLpYYqUgQM8RUawkd_gYlRcgz4kPW5cZl1RBFJsOViyRR3kdSAMcb4UkYJ9R4e9o0fegwh1w"
                     //这里可以改成token
                     // name: 'admin' // 携带客户端信息
                 },
                 function connectCallback(frame) {
                     // 连接成功时（服务器响应 CONNECTED 帧）的回调方法
-                    alert("success");
+                    alert("SUCCESS");
                     subscribe();
                 },
                 function errorCallBack(error) {
                     // 连接失败时（服务器响应 ERROR 帧）的回调方法
-                    alert("error");
+                    console.log(error.headers.message);
+                    alert(error.headers.message);
                 });
         }
 
