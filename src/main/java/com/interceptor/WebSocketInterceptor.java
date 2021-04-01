@@ -2,12 +2,14 @@ package com.interceptor;
 import com.alibaba.fastjson.JSON;
 import com.enums.ResponseEnum;
 import com.model.vo.JwtVO;
+import com.util.I18nUtil;
 import com.util.JsonUtil;
 import org.apache.http.auth.BasicUserPrincipal;
 import org.springframework.http.HttpHeaders;
 import org.springframework.lang.NonNull;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.MessagingException;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;
@@ -37,13 +39,13 @@ public class WebSocketInterceptor implements ChannelInterceptor {
                 // 这里就是token
                 Object name = JsonUtil.parseMap(JsonUtil.toJsonString(raw)).get(HttpHeaders.AUTHORIZATION);
                 if (Objects.isNull(name)) {
-                    throw new RuntimeException(ResponseEnum.TOKEN_NOT_NULL.name());
+                    throw new MessagingException(I18nUtil.getMessage(ResponseEnum.TOKEN_NOT_NULL.name()));
                 }
                 if (name instanceof List) {
                     // 设置当前访问器的认证用户
                     String authorization = JsonUtil.parseList(JsonUtil.toJsonString(name)).get(0).toString();
                     if (!authorization.toLowerCase().startsWith(OAuth2AccessToken.BEARER_TYPE.toLowerCase())) {
-                        throw new RuntimeException(ResponseEnum.TOKEN_ERROR.name());
+                        throw new MessagingException(I18nUtil.getMessage(ResponseEnum.TOKEN_ERROR.name()));
                     }
                     String token = authorization.substring(OAuth2AccessToken.BEARER_TYPE.length()).trim();
                     Jwt jwt = JwtHelper.decode(token);
